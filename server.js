@@ -7,7 +7,7 @@ const io = require('socket.io')(http);
 
 app.use(express.static(__dirname))
 
-app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
 
 // Evento quando o cliente se conecta ao servidor 
