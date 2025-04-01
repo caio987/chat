@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: .5s;
+}
+
+body {
+    /* border: solid; */
+    background-color: rgb(255, 255, 255);
+}
+
+/* ---------------------------------------------- */
+/* HEADER */
+header {
+    padding: 15px 30px;
+}
+
+header,
+footer {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+header #logo,
+footer #logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6em;
+}
+
+header nav,
+footer nav {
+    display: flex;
+    gap: 25px;
+}
+
+header nav a,
+footer nav a {
+    color: #fff;
+    font-size: 1.3em;
+    text-decoration: none;
+    transition: .5s;
+}
+
+header nav a:hover,
+footer nav a:hover {
+    padding: 4px 10px;
+    border-radius: 5px;
+    background-color: rgba(240, 248, 255, 0.652);
+}
+
+/* ---------------------------------------------- */
+/* CHAT */
+main #chat {
+    opacity: 1;
+    /* border: solid; */
+    margin: auto;
+    width: 80%;
+}
+
+main #headerChat {
+    /* border: solid; */
+    margin: auto;
+    display: flex;
+    padding: 10px;
+    width: 30%;
+}
+
+main #headerChat img {
+    /* border: solid; */
+    height: 16px;
+}
+
+main #headerChat #seta {
+    /* border: solid; */
+    transform: rotate(180Deg);
+}
+main #tipoNome{
+    margin: 0 0% 0 25%;
+}
+main #nome {
+    /* text-align: center; */
+    border: none;
+    width: 100px;
+    text-overflow: ellipsis;
+    margin: 0 5% 0 2%;
+    outline: none;
+    transition: 1s;
+}
+main #nome:hover{
+    width: max-content;
+}
+
+main #conversa {
+    /* border: solid; */
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+main #mensagens {
+    /* border: solid; */
+    width: 60%;
+    margin: 20px auto;
+}
+
+main #mensagens p {
+    /* border: solid; */
+    padding: 10px;
+    margin: 10px 0;
+    /* height: 50px; */
+    /* overflow: hidden; */
+    border-radius: 20px;
+    border-bottom-left-radius: 0;
+    max-width: 50%;
+}
+
+main #conversa #mensagem {
+    margin-right: 15px;
+    text-align: start;
+    padding: 10px;
+    border-radius: 15px;
+    width: 300px;
+}
+
+/* ÁREA DE MENSAGENS */
+.areaMenssagem {
+    /* border: solid; */
+    margin-bottom: 15px;
+    flex-grow: 1;
+    height: 60vh;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* LISTA DE MENSAGENS */
+#mensagens {
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* MENSAGENS DO PRÓPRIO USUÁRIO */
+.minha-mensagem {
+    align-self: flex-end;
+    background-color: #000000;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 0 15px;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+/* MENSAGENS DE OUTROS USUÁRIOS */
+.outra-mensagem {
+    align-self: flex-start;
+    background-color: #e4e6eb;
+    color: black;
+    list-style: none;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+
+main #conversa button {
+    margin-top: 2px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    /* border: solid; */
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px 25px 25px 5px;
+}
+
+main #conversa button:hover {
+    opacity: 1;
+}
+
+main #conversa img {
+    width: 20px;
+}
+
+/* ---------------------------------------------- */
+/* HOME */
+main {
+    /* border: solid; */
+    margin: 4% auto;
+    max-width: 2000px;
+}
+
+main #informacoes {
+    width: 50%;
+    /* border: solid; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+main #informacoes a {
+    color: #000;
+}
+
+main #informacoes #caixa,
+#usuarioCadastro button,
+#motoristaCadastro button {
+    border: solid;
+    display: block;
+    margin: 0 auto;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+main #informacoes #caixa:hover,
+form button:hover {
+    opacity: .7;
+}
+
+main #informacoes h1,
+main #informacoes h2 {
+    font-weight: normal;
+}
+
+main #mapa {
+    box-shadow: 3px 3px 20px;
+    max-width: 700px;
+    border-radius: 20px;
+}
+
+/* ---------------------------------------------- */
+/* CADASTRO */
+main h1,main h2 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+main #alinhamento {
+    /* border: solid; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+main .caixa {
+    /* border: solid; */
+    margin-top: 20px;
+}
+
+main .botao {
+    border-bottom: solid;
+    padding: 10px;
+    text-align: center;
+    scale: .8;
+    cursor: pointer;
+}
+
+main .botao.active {
+    scale: 1;
+    border: solid;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #000;
+}
+
+main #motoristaCadastro,
+main #usuarioCadastro {
+    color: #fff;
+    background-color: rgb(61, 61, 61);
+    margin: 30px 0;
+    opacity: 0;
+    border: solid;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+main #motoristaCadastro input,
+main #usuarioCadastro input,
+main #usuarioCadastro ::placeholder,
+main input #motoristaCadastro {
+    margin: 5px 0 15px;
+    padding: 8px;
+    border-radius: 6px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: solid white;
+    color: #fff;
+    text-align: start;
+}
+
+main #motoristaCadastro p,
+main #usuarioCadastro p {
+    text-align: center;
+}
+
+main #motoristaCadastro a,
+main #usuarioCadastro a {
+    color: #b9b9b9;
+}
+
+main #motoristaCadastro a:hover,
+main #usuarioCadastro a:hover {
+    color: #fff;
+}
+
+main #motoristaCadastro button,
+main #usuarioCadastro button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+main #motoristaCadastro button:hover,
+main #usuarioCadastro button:hover {
+    scale: 1.2;
+}
+
+/* ---------------------------------------------- */
+/* FOOTER */
+footer {
+    padding: 10px 0;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    /* position: fixed; */
+    /* bottom: 0; */
+    width: 100%;
+}
+
+footer h2 {
+    margin-top: 5px;
+}
+
+@media(max-width: 1470px) {
+    footer {
+        position: static;
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="3" /> -->
+    <title>Chat</title>
+    <link rel="stylesheet" href="/public/style.css">
+    <style>
+        header{
+            margin: 0;
+        }
+        main{
+            margin: 10px;
+        }
+        footer{
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/public/index.html" id="logo">UBER</a>
+        <nav>
+            <a href="/public/cadastro.html">Cadastre-se</a>
+            <a href="/public/login.html">Login</a>
+            <a href="/public/chat.html">Chat</a>
+        </nav>
+    </header>
+    <main>
+        <!-- <h1>Uber</h1> -->
+        <form id="chat">
+            <div id="headerChat">
+                <a href="/public/index.html"><img id="seta" src="img/seta.png" alt=""></a>
+                <p id="tipoNome"></p>
+                <input type="text" id="nome" placeholder="Nome de Úsuario" required>
+                <img src="img/telefone.png" alt="">
+            </div>
+            <div class="areaMenssagem">
+                <ul id="mensagens"></ul>
+            </div>
+            <div id="conversa">
+                <input type="text" id="mensagem" placeholder="Digite a sua mensagem" required>
+                <button><img src="img/enviado.png" alt=""></button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <a href="/public/index.html" id="logo">UBER</a>
+        <nav>
+            <a href="/public/cadastro.html">Cadastre-se</a>
+            <a href="/public/login.html">Login</a>
+            <a href="/public/chat.html">Chat</a>
+        </nav>
+        <h2>© Todos os direitos reservados a Uber</h2>
+    </footer>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        document.getElementById("tipoNome").innerHTML = sessionStorage.getItem("Perfil");
+        
+        // Selecionar o input nome do úsuario
+        // const nomeInput = document.getElementById('nome').value = sessionStorage.getItem('Nome')
+
+        const socket = io();
+
+        // Recupera o nome do usuário do LocalStorage
+        const nomeSalvo = sessionStorage.getItem('Nome');
+        const nomeInput = document.getElementById('nome');
+
+        if (nomeSalvo) {
+            nomeInput.value = nomeSalvo;
+            // nomeInput.disabled = true;
+        } else {
+            window.location.href = '/public/index.html'; // Volta para o cadastro se não houver nome salvo
+        }
+
+        const mensagemInput = document.getElementById('mensagem');
+        const mensagens = document.getElementById('mensagens');
+
+        // Enviar mensagem ao servidor
+        document.querySelector('form').addEventListener('submit', event => {
+            event.preventDefault();
+
+            const nome = nomeInput.value.trim();
+            const mensagem = mensagemInput.value.trim();
+
+            if (nome && mensagem) {
+                socket.emit('chat message', { nome, mensagem });
+                mensagemInput.value = '';
+            }
+        });
+
+        // Evento para receber mensagens do servidor
+        socket.on('chat message', dados => {
+            const lista = document.createElement('li');
+
+            lista.classList.add(dados.nome === nomeInput.value ? 'minha-mensagem' : 'outra-mensagem');
+
+            lista.innerHTML = `<span class="nome-usuario" style="color:${dados.color}">${dados.nome}</span>: ${dados.mensagem}`;
+
+            mensagens.appendChild(lista);
+            mensagens.scrollTop = mensagens.scrollHeight;
+        });
+    </script>
+</body>
+
+</html>

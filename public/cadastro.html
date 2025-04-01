@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <meta http-equiv="refresh" content="3" /> -->
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="/public/style.css" />
+  <style>
+    header{
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/public/index.html" id="logo">UBER</a>
+    <nav>
+      <a href="/public/cadastro.html">Cadastre-se</a>
+      <a href="/public/login.html">Login</a>
+      <a href="/public/chat.html">Chat</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Cadastre-se na Uber</h1>
+    <h2>Selecione se você é um <span id="motorista2"
+        style="cursor: pointer; text-decoration: underline;">motorista</span> ou <span id="usuario2"
+        style="cursor: pointer; text-decoration: underline;">usuário</span></h2>
+    <div id="alinhamento">
+      <div class="caixa">
+        <div class="botao" id="motorista">
+          <h3>Motorista</h3>
+        </div>
+        <form id="motoristaCadastro">
+          <label for="">Nome:</label><br />
+          <input required id="inputNome" type="text" placeholder="Digite seu nome" /><br />
+          <label for="">E-mail:</label><br />
+          <input required id="inputEmail" type="email" placeholder="Digite seu e-mail" /><br />
+          <label for="">Carro:</label><br />
+          <input required id="inputCarro" type="text" placeholder="Digite a marca e o modelo do carro" /><br />
+          <input required id="inputPlaca" type="text" placeholder="Digite a placa do carro" /><br />
+          <label for="">Senha:</label><br />
+          <input required id="inputSenha" type="password" placeholder="Digite sua senha" /><br />
+          <label for="">Confirme sua senha:</label><br />
+          <input required id="inputSenha2" type="password" placeholder="Confirme sua senha" /><br />
+          <p>Já possuí uma conta? <a href="/public/login.html">clique aqui</a> para logar</p>
+          <button type="button" onclick="enviaDados()">Cadastrar</button>
+        </form>
+      </div>
+      <div class="caixa">
+        <div class="botao" id="usuario">
+          <h3>Usuário</h3>
+        </div>
+        <form id="usuarioCadastro">
+          <label for="">Nome:</label><br />
+          <input required id="inputNome2" type="text" placeholder="Digite seu nome" /><br />
+          <label for="">E-mail:</label><br />
+          <input required id="inputEmail2" type="email" placeholder="Digite seu e-mail" /><br />
+          <label for="">Telefone:</label><br />
+          <input required id="inputTelefone" type="number" placeholder="Digite seu telefone" /><br />
+          <label for="">Senha:</label><br />
+          <input required id="inputSenha3" type="password" placeholder="Digite sua senha" /><br />
+          <label for="">Confirme sua senha:</label><br />
+          <input required id="inputSenha4" type="password" placeholder="Confirme sua senha" /><br />
+          <p>Já possuí uma conta? <a href="/public/login.html">clique aqui</a> para logar</p>
+          <button type="button" onclick="enviaDados()">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="/public/index.html" id="logo">UBER</a>
+    <nav>
+      <a href="/public/cadastro.html">Cadastre-se</a>
+      <a href="/public/login.html">Login</a>
+      <a href="/public/chat.html">Chat</a>
+    </nav>
+    <h2>© Todos os direitos reservados a Uber</h2>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+</body>
+</html>
